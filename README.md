@@ -8,27 +8,9 @@ We use a large corpus of english text, drawn from a collection of novels from th
 The Embeddings are <b>64</b> dimensional, and are built over a vocabulary of the <b>25000</b> most frequent words of the corpus.
 
 The trained embeddings are evaluated by a set of simple <b>analogical reasoning</b> tasks, and then mapped to 2-D using the <b>t-SNE</b> algorithm for visualization.
-Further, the trained embeddings are then used to perform Sentiment Analysis on the IMDB dataset of reviews. A deep LSTM model, with a maximum input sequence length of <b>300</b> is used for the task of Sentiment Analysis. Its architecture is specified below
+Further, the trained embeddings are then used to perform Sentiment Analysis on the IMDB dataset of reviews. An attention based LSTM model, with a maximum input sequence length of <b>300</b> is used for the task of Sentiment Analysis. Its architecture is specified below
 
-
-    Model: "model_sentiment_analysis"
-    _________________________________________________________________
-    Layer (type)                 Output Shape              Param #   
-    =================================================================
-    input_5 (InputLayer)         [(None, 300)]             0         
-    _________________________________________________________________
-    embedding_4 (Embedding)      (None, 300, 64)           1600192   
-    _________________________________________________________________
-    lstm_8 (LSTM)                (None, 300, 128)          98816     
-    _________________________________________________________________
-    lstm_9 (LSTM)                (None, 128)               131584    
-    _________________________________________________________________
-    dense_4 (Dense)              (None, 1)                 129       
-    =================================================================
-    Total params: 1,830,721
-    Trainable params: 1,830,721
-    Non-trainable params: 0
-    _________________________________________________________________
+![](assets/attention_model.png)
 
 
 ## Demo
